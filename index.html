@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heart pulse</title>
+</head>
+
+<body>
+    <svg viewBox="0 0 100 100">
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p" />
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p1"
+            stroke-linecap="round">
+            <animate attributeName="stroke-dashoffset" from="0" to="40" dur="1s" repeatCount="indefinite" />
+        </path>
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p2">
+            <animate attributeName="stroke-dashoffset" begin="0.1s" from="0" to="40" dur="1s"
+                repeatCount="indefinite" />
+        </path>
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p3">
+            <animate attributeName="stroke-dashoffset" begin="0.2s" from="0" to="40" dur="1s"
+                repeatCount="indefinite" />
+        </path>
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p4">
+            <animate attributeName="stroke-dashoffset" begin="0.3s" from="0" to="40" dur="1s"
+                repeatCount="indefinite" />
+        </path>
+        <path d="M 10,30 A 20,20 0,0,1 50,30 A 20,20 0,0,1 90,30 Q 90,60 50,90 Q 10,60 10,30 z" id="p5">
+            <animate attributeName="stroke-dashoffset" begin="0.4s" from="0" to="40" dur="1s"
+                repeatCount="indefinite" />
+        </path>
+    </svg>
+</body>
+<style>
+    :root {
+        --color1: #333333;
+        --color2: #ffd90000;
+        --color3: #294e56;
+        --color4: #c0c0c0;
+        --color5: #1d3a56;
+    }
+
+    body {
+        background: var(--color5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100svh;
+    }
+
+    svg {
+        width: 500px;
+        filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.3));
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    path {
+        fill: none;
+        stroke-width: 3;
+        stroke-dasharray: 10 30;
+    }
+
+    #p {
+        fill: rgb(207, 2, 46);
+        stroke: none;
+        animation-name: pulse2;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse {
+        50% {
+            filter: drop-shadow(0px 0px 15px rgb(255, 255, 255, 0.4));
+        }
+
+        70% {
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
+        }
+
+        90% {
+            filter: drop-shadow(0px 0px 30px rgb(255, 255, 255, 0.4));
+        }
+    }
+
+    @keyframes pulse2 {
+        50% {
+            fill: rgb(235, 23, 68);
+        }
+
+        70% {
+            fill: rgb(207, 2, 46);
+        }
+
+        90% {
+            fill: rgb(236, 7, 57);
+        }
+    }
+
+    #p1 {
+        stroke: rgb(141, 0, 31);
+    }
+
+    #p2 {
+        stroke: rgba(141, 0, 31, 0.8);
+    }
+
+    #p3 {
+        stroke: rgba(141, 0, 31, 0.6);
+    }
+
+    #p4 {
+        stroke: rgba(141, 0, 31, 0.4);
+    }
+
+    #p5 {
+        stroke: rgba(141, 0, 31, 0.2);
+    }
+</style>
+
+</html>
